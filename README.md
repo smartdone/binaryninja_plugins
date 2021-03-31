@@ -12,7 +12,7 @@
 ### 1. 获取当前指令的arch
 
 >一般情况下通过传递给插件的BinaryView参数是可以获取到准确的arch的，
->但是分析arm的库的时候，他arch会一直返回arm，这个时候用他去assemble
+>但是分析arm的库的时候，他arch会一直返回arm，这个时候如果是thumb指令用他去assemble
 >之后再去patch就会出错，正确的方式是调用当前
 >MediumLevelILInstruction的`.function.arch`去获取正确的arch，
 >然后去assemble就不会出错了
